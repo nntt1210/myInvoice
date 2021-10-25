@@ -1,15 +1,6 @@
 const sql = require("mssql");
 
-const config = {
-  server: "DESKTOP-DGTIDIG",
-  port: 1433,
-  user: "sa",
-  password: "sample",
-  database: "QuanLyHoaDon",
-  options: {
-    trustServerCertificate: true,
-  },
-};
+const config = require("../config");
 
 sql.on("error", (err) => {
   console.log(err.message);

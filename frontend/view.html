@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Danh sách hoá đơn</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card shadow mt-5">
+            <h2 class="card-header">
+              Danh sách hoá đơn
+              <a
+                class="btn btn-outline-primary float-right"
+                href="add.html"
+                role="button"
+              >
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Thêm mới
+              </a>
+            </h2>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th class="text-center" scope="col">#</th>
+                  <th scope="col">name</th>
+                  <th scope="col">url</th>
+                  <th scope="col">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody id="list"></tbody>
+            </table>
+
+            <div class="card-footer text-muted">Footer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div
+      class="modal"
+      id="siteModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="siteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="siteModalLabel">Site</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="txtId" class="col-form-label">#</label>
+                <input type="text" class="form-control" id="txtId" readonly />
+              </div>
+              <div class="form-group">
+                <label for="txtName" class="col-form-label">Name</label>
+                <input type="text" class="form-control" id="txtName" />
+              </div>
+              <div class="form-group">
+                <label for="txtUrl" class="col-form-label">Url</label>
+                <input type="text" class="form-control" id="txtUrl" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+              Close
+            </button>
+            <button type="button" class="btn btn-outline-success" id="btnSave">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      {{#each this}}
+        <tr>
+          <th class="text-center" scope="row">{{MaSP}}</th>
+          <td>{{TenSP}}</td>
+          <td>{{SoLuongTon}}</td>
+          <!-- <td class="text-right">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              data-toggle="modal"
+              data-target="#siteModal"
+              data-id="{{id}}"
+            >
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+            <a
+              class="btn btn-danger btn-sm delSite"
+              href="javascript:;"
+              role="button"
+              data-id="{{id}}"
+            >
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </a>
+          </td> -->
+        </tr>
+      {{/each}}
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.1/handlebars.min.js"></script>
+    <script src="view.app.js"></script>
+  </body>
+</html>
