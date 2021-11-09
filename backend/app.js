@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/sites", require("./routes/site.route"));
+app.use("/invoice", require("./routes/invoice.route"));
 
 var port = process.env.PORT || 3000;
 app.listen(port, () => {
