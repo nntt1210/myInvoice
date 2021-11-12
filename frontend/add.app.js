@@ -1,22 +1,26 @@
-$('#btnSave').on('click', function () {
+$("#btnSave").on("click", function () {
   var objToPost = {
-    name: $('#txtName').val(),
-    url: $('#txtUrl').val()
-  }
+    MaHD: $("#txtHD").val(),
+    MaKH: $("#txtKH").val(),
+    NgayLap: $("#txtNgayLap").val(),
+    TongTien: 500000,
+  };
 
   $.ajax({
-    url: 'http://localhost:3000/sites',
-    type: 'POST',
-    contentType: 'application/json',
+    url: "http://localhost:3000/sites/add",
+    type: "POST",
+    contentType: "application/json",
     data: JSON.stringify(objToPost),
-    dataType: 'json',
+    dataType: "json",
     timeout: 10000,
-  }).done(function (data) {
-    // console.log(data);
-    alert('site added');
-  }).fail(function (xhr, textStatus, error) {
-    console.log(textStatus);
-    console.log(error);
-    console.log(xhr);
-  });
-})
+  })
+    .done(function (data) {
+      console.log(data);
+      alert("invoice added");
+    })
+    .fail(function (xhr, textStatus, error) {
+      console.log(textStatus);
+      console.log(error);
+      console.log(xhr);
+    });
+});

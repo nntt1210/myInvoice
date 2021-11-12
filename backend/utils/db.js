@@ -18,6 +18,23 @@ exports.load = async function getListProductAsyncFunction(sqlQuery) {
   }
 };
 
+exports.add = async function addInvoice(invoice) {
+  try {
+    let pool = await sql.connect(config);
+    console.log("invoice", invoice);
+    let result1 = await pool
+      .request()
+      .query(
+        `insert into HoaDon values(${invoice.MaHD}, ${invoice.MaKH}, ${invoice.NgayLap}, ${invoice.TongTien})`
+      );
+    sql.close();
+    // return result1.recordsets[0];
+  } catch (error) {
+    console.log("error", error.message);
+    sql.close();
+  }
+};
+
 // exports.add = (tableName, entity) => {
 //   return new Promise((resolve, reject) => {
 //     var sqlQuery = `insert into ${tableName} set ?`;

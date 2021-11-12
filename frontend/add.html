@@ -23,7 +23,7 @@
             <h2 class="card-header">Thêm mới hóa đơn</h2>
             <div class="card-body">
               <div class="form-group">
-                <label for="1">Mã Hóa Đơn</label>
+                <label for="txtHD">Mã Hóa Đơn</label>
                 <input
                   id="txtHD"
                   type="text"
@@ -33,29 +33,32 @@
                 />
               </div>
               <div class="form-group">
-                <label for="2">Mã Khách Hàng</label>
+                <label for="txtKH">Mã Khách Hàng</label>
                 <input
-                  id="2"
+                  id="txtKH"
                   type="text"
                   class="form-control"
                   placeholder="Nhập vào mã khách hàng"
                 />
               </div>
               <div class="form-group">
-                <label for="3">Ngày Lập</label>
+                <label for="txtNgayLap">Ngày Lập</label>
+                <input id="txtNgayLap" type="date" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="txtTongTien">Tổng tiền</label>
                 <input
-                  id="3"
-                  type="date"
+                  id="txtTongTien"
+                  type="number"
                   class="form-control"
-                  placeholder="url"
+                  placeholder="Nhập vào tổng tiền"
                 />
               </div>
-          
             </div>
             <div class="card-footer text-muted">
               <a class="btn btn-primary" href="index.html" role="button">
                 <i class="fa fa-backward" aria-hidden="true"></i>
-                List
+                Quay lại
               </a>
               <a
                 id="btnSave"
@@ -64,7 +67,7 @@
                 role="button"
               >
                 <i class="fa fa-check" aria-hidden="true"></i>
-                Save
+                Lưu
               </a>
             </div>
           </div>
