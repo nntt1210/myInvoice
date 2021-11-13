@@ -28,19 +28,6 @@ exports.statistics = () => {
   on M.nam=T.YEAR and M.MonthNumber=T.Month
   order by M.nam ASC, M.MonthNumber ASC`);
 };
-
-// exports.single = (id) => {
-//   return db.load(`select * from SanPham where MaSP = ${id}`);
-// };
-
-exports.add = (entity) => {
-  return db.add("SanPham", entity);
+exports.add = (invoice) => {
+  return db.add(invoice);
 };
-
-// exports.del = (id) => {
-//   return db.del("SanPham", "MaSP", id);
-// };
-
-// exports.patch = (id, entityWoId) => {
-//   return db.patch("SanPham", "MaSP", id, entityWoId);
-// };
