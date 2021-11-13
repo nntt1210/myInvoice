@@ -1,9 +1,18 @@
+function formatDate(input) {
+  var datePart = input.match(/\d+/g),
+    year = datePart[0].substring(0, 4), // get only two digits
+    month = datePart[1],
+    day = datePart[2];
+
+  return day + "/" + month + "/" + year;
+}
+
 $("#btnSave").on("click", function () {
   var objToPost = {
     MaHD: $("#txtHD").val(),
     MaKH: $("#txtKH").val(),
-    NgayLap: $("#txtNgayLap").val(),
-    TongTien: 500000,
+    NgayLap: formatDate($("#txtNgayLap").val()),
+    TongTien: parseInt($("#txtTongTien").val()),
   };
 
   $.ajax({
@@ -16,7 +25,7 @@ $("#btnSave").on("click", function () {
   })
     .done(function (data) {
       console.log(data);
-      alert("invoice added");
+      // alert("invoice added");
     })
     .fail(function (xhr, textStatus, error) {
       console.log(textStatus);
